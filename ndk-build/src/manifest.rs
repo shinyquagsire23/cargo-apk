@@ -31,10 +31,6 @@ pub struct AndroidManifest {
     #[serde(default)]
     pub uses_permission: Vec<Permission>,
 
-    #[serde(rename(serialize = "uses-native-library"))]
-    #[serde(default)]
-    pub uses_native_library: Vec<NativeLibrary>,
-
     #[serde(default)]
     pub queries: Option<Queries>,
 
@@ -96,6 +92,9 @@ pub struct Application {
     #[serde(rename(serialize = "property"))]
     #[serde(default)]
     pub property: Vec<Property>,
+    #[serde(rename(serialize = "uses-native-library"))]
+    #[serde(default)]
+    pub uses_native_library: Vec<NativeLibrary>,
     #[serde(default)]
     pub activity: Activity,
 }
