@@ -93,6 +93,9 @@ pub struct Application {
     #[serde(rename(serialize = "meta-data"))]
     #[serde(default)]
     pub meta_data: Vec<MetaData>,
+    #[serde(rename(serialize = "property"))]
+    #[serde(default)]
+    pub property: Vec<Property>,
     #[serde(default)]
     pub activity: Activity,
 }
@@ -227,6 +230,17 @@ pub struct IntentFilterData {
 pub struct MetaData {
     #[serde(rename(serialize = "android:name"))]
     pub name: String,
+    #[serde(rename(serialize = "android:value"))]
+    pub value: String,
+}
+
+/// Android [property element](https://developer.android.com/guide/topics/manifest/property-element).
+#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+pub struct Property {
+    #[serde(rename(serialize = "android:name"))]
+    pub name: String,
+    #[serde(rename(serialize = "android:resource"))]
+    pub resource: String,
     #[serde(rename(serialize = "android:value"))]
     pub value: String,
 }
