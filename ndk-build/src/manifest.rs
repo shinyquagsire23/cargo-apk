@@ -88,7 +88,7 @@ pub struct Application {
     #[serde(rename(serialize = "meta-data"))]
     #[serde(default)]
     pub meta_data: Vec<MetaData>,
-    #[serde(rename(serialize = "property"))]
+    #[serde(serialize = "property")]
     #[serde(default)]
     pub property: Vec<Property>,
     #[serde(rename(serialize = "uses-native-library"))]
