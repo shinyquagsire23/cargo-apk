@@ -50,7 +50,6 @@ impl Default for AndroidManifest {
             sdk: Default::default(),
             uses_feature: Default::default(),
             uses_permission: Default::default(),
-            uses_native_library: Default::default(),
             queries: Default::default(),
             application: Default::default(),
         }
