@@ -240,9 +240,9 @@ pub struct Property {
     #[serde(rename(serialize = "android:name"))]
     pub name: String,
     #[serde(rename(serialize = "android:resource"))]
-    pub resource: String,
+    pub resource: Option<String>,
     #[serde(rename(serialize = "android:value"))]
-    pub value: String,
+    pub value: Option<String>,
 }
 
 /// Android [uses-feature element](https://developer.android.com/guide/topics/manifest/uses-feature-element).
