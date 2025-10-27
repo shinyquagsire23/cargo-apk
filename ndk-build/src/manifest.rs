@@ -335,7 +335,6 @@ pub struct Sdk {
     pub max_sdk_version: Option<u32>,
 }
 
-
 /// Android [uses-native-library element](https://developer.android.com/guide/topics/manifest/uses-native-library-element).
 #[derive(Clone, Debug, Default, Deserialize, Serialize)]
 pub struct NativeLibrary {
