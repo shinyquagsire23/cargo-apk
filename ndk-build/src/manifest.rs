@@ -31,6 +31,10 @@ pub struct AndroidManifest {
     #[serde(default)]
     pub uses_permission: Vec<Permission>,
 
+    #[serde(rename(serialize = "uses-native-library"))]
+    #[serde(default)]
+    pub uses_native_library: Vec<NativeLibrary>,
+
     #[serde(default)]
     pub queries: Option<Queries>,
 
@@ -50,6 +54,7 @@ impl Default for AndroidManifest {
             sdk: Default::default(),
             uses_feature: Default::default(),
             uses_permission: Default::default(),
+            uses_native_library: Default::default(),
             queries: Default::default(),
             application: Default::default(),
         }
@@ -314,6 +319,16 @@ pub struct Sdk {
     pub target_sdk_version: Option<u32>,
     #[serde(rename(serialize = "android:maxSdkVersion"))]
     pub max_sdk_version: Option<u32>,
+}
+
+
+/// Android [uses-native-library element](https://developer.android.com/guide/topics/manifest/uses-native-library-element).
+#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+pub struct NativeLibrary {
+    #[serde(rename(serialize = "android:name"))]
+    pub name: Option<String>,
+    #[serde(rename(serialize = "android:required"))]
+    pub required: Option<bool>,
 }
 
 impl Default for Sdk {
